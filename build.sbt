@@ -25,6 +25,9 @@ lazy val dsAlgoJava: Project = Project(
 ).settings(commonSettings)
   .settings(
     javaSource in Compile := baseDirectory.value,
+    libraryDependencies ++= Seq(
+      "junit" % "junit" % "4.12"
+    ),
     // Java Style checks
     compile in Compile := ((compile in Compile) dependsOn (jcheckStyle in Compile)).value,
     compile in Test := ((compile in Test) dependsOn (jcheckStyle in Test)).value
