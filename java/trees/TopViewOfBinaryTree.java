@@ -58,17 +58,17 @@ public class TopViewOfBinaryTree {
 
   public static void main(String[] args) {
 
-        /* Create following Binary Tree
-             1
-           /  \
-          2    3
+    /* Create following Binary Tree
+         1
+       /  \
+      2    3
+       \
+        4
+         \
+          5
            \
-            4
-             \
-              5
-               \
-                6
-         */
+            6
+     */
     Node root = new Node(1);
     root.left = new Node(2);
     root.right = new Node(3);

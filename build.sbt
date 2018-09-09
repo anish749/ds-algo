@@ -2,13 +2,20 @@ import sbt.Keys.compile
 
 //Dependency Versions
 val scalazVersion = "7.2.14"
+val jUnitVersion = "4.12"
+val hamcrestVersion = "1.3"
+val scalaTestVersion = "3.0.5"
 
 lazy val commonSettings = Seq(
   organization := "org.anish",
   description := "Data Structures and Algorithms for coding interviews",
   version := "0.1.0-SNAPSHOT",
   scalaVersion := "2.12.5",
-  scalacOptions ++= Seq("-target:jvm-1.8", "-deprecation", "-feature", "-unchecked", "-language:postfixOps"),
+  scalacOptions ++= Seq("-target:jvm-1.8",
+    "-deprecation",
+    "-feature",
+    "-unchecked",
+    "-language:postfixOps"),
   javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
   compileOrder := CompileOrder.JavaThenScala
 )
@@ -26,7 +33,9 @@ lazy val dsAlgoJava: Project = Project(
   .settings(
     javaSource in Compile := baseDirectory.value,
     libraryDependencies ++= Seq(
-      "junit" % "junit" % "4.12"
+      "org.hamcrest" % "hamcrest-core" % hamcrestVersion,
+      "org.hamcrest" % "hamcrest-all" % hamcrestVersion,
+      "junit" % "junit" % jUnitVersion
     ),
     // Java Style checks
     compile in Compile := ((compile in Compile) dependsOn (jcheckStyle in Compile)).value,
@@ -40,7 +49,8 @@ lazy val dsAlgoScala: Project = Project(
   .settings(
     scalaSource in Compile := baseDirectory.value,
     libraryDependencies ++= Seq(
-      "org.scalaz" %% "scalaz-core" % scalazVersion
+      "org.scalaz" %% "scalaz-core" % scalazVersion,
+      "org.scalatest" %% "scalatest" % scalaTestVersion
     ),
     wartremoverErrors in Compile ++= Warts.unsafe.filterNot(disableWarts.contains),
     compileScalastyle := scalastyle.in(Compile).toTask("").value,
