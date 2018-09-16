@@ -1,6 +1,6 @@
 package stacks;
 
-import static common.JavaHelpers.require;
+import static utils.JavaHelpers.require;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
