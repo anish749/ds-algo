@@ -12,7 +12,7 @@ def lengthOfLongestSubstring(s):
     for (i, c) in enumerate(s):
         if i > 0 and c == s[i-1]:
             max_count = max(counter, max_count)
-            counter = 1
+            counter = 1 # Count this as 1 since a new non-repeating seq can start here.
         else:
             counter += 1
 
@@ -21,7 +21,7 @@ def lengthOfLongestSubstring(s):
 
 
 
-assert lengthOfLongestSubstring('abrkaabcdefghijjxxx') == 10
+assert lengthOfLongestSubstring('abrkaaabcdefghijjxxx') == 10
 assert lengthOfLongestSubstring('abrkajxxxabcdefghij') == 11
 assert lengthOfLongestSubstring('abcdefghijjabrkajxx') == 10
 assert lengthOfLongestSubstring('') == 0
