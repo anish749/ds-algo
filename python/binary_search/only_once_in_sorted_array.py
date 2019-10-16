@@ -47,6 +47,7 @@ def only_once_in_sorted_array(arr: list) -> int:
 
 # Tests
 tests = [
+    # List of the input array and the expected output.
     ([1, 1, 2], 2),
     ([], None),
     ([1], 1),

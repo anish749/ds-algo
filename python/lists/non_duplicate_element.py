@@ -12,6 +12,8 @@ techseries.dev, Oct 14, 2019
 """
 This is a good problem to explain basic understanding of space and time complexities,
 
+See also binary_search/only_once_in_sorted_array.py for an optimization for sorted arrays
+
 Lets start by counting elements in the list. Storing the counts,
 and then going over it to find which element occurs once.
 Space - O(n) extra space.
@@ -76,10 +78,13 @@ def only_once_xor_fp(arr: list) -> int:
 
 # Tests
 tests = [
+    # List of the input array and the expected output.
     ([1, 1, 2], 2),
-    ([], 0),
+    ([], 0),  # Is this a valid case? Shouldn't this output None instead of 0 ?
     ([1], 1),
     ([4, 4, 3, 3, 2, 2, 6], 6),
+    ([2, 2, 3, 4, 4, 6, 6], 3),
+    ([0, 2, 2, 3, 3, 4, 4, 6, 6], 0),
 ]
 
 for (arr, expected) in tests:
