@@ -33,7 +33,8 @@ object GroupByKeyTailRec extends Matchers {
     ) shouldBe
       Map(1 -> List("a", "b"),
         2 -> List("x", "y"),
-        3 -> List("a", "c"))
+        3 -> List("a", "c")
+      )
 
     groupByKey(List()) shouldBe Map()
   }
