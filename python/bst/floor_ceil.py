@@ -16,6 +16,14 @@ class Node:
 
 
 def find_ceiling_floor(root_node: Node, k, floor=None, ceil=None) -> (int, int):
+    """
+    Recursive traversal in O(log n) time.
+    This is much like find, except we try to find the closest match.
+      - If we are traversing right, then the current node's value becomes
+        the floor.
+      - If we are traversing left, then the current node's value becomes
+        the ceil.
+    """
     if not root_node:
         return floor, ceil
     if k > root_node.value:
@@ -26,7 +34,7 @@ def find_ceiling_floor(root_node: Node, k, floor=None, ceil=None) -> (int, int):
         return k, k
 
 
-
+# Tests
 root = Node(8)
 root.left = Node(4)
 root.right = Node(12)
