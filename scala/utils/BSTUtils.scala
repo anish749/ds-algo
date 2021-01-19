@@ -51,4 +51,27 @@ object BSTUtils {
     toBST(0, arr.length - 1)
   }
 
+  def prettyPrintTree[T](root: BinaryTreeNode[T]): Unit = {
+    def prettyPrint(root: BinaryTreeNode[T], level: Int): Unit = {
+      println("|-" * level /*+ "- "*/ + root.value + ":" + root.childCnt)
+      //      println("-" * level /*+ "- "*/ + root.value)
+      if (root.left.isDefined) {
+        //        print("|" + "-" * (level - 1))
+        print(" |" * (level - 1) + " ")
+        prettyPrint(root.left.get, level + 1)
+      }
+      if (root.right.isDefined) {
+        //        print("|" + "-" * (level - 1))
+        print(" |" * (level - 1) + " ")
+        prettyPrint(root.right.get, level + 1)
+      }
+    }
+
+    prettyPrint(root, 0)
+  }
+
+  def main(args: Array[String]): Unit = {
+    val array = Array(1, 2, 3, 4, 5, 6)
+    prettyPrintTree(arrayToBST(array).get)
+  }
 }

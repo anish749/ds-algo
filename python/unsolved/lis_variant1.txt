@@ -1,0 +1,30 @@
+Aman is a big fan of taking a collection of T-shirts.Every T-shirt has some numbers printed on it. Aman wants the number printed on T-shirts to be in the consecutive numbers. He is worried as he is missing some numbers on the T-shirts. So, Aman wants to replace the T-shirts so that his collection of T-shirts becomes a consecutive number range.
+
+Aman has N T-shirts with different numbers printed on it. What is the minimum number of T-shirts Aman needs to replace so that his collection becomes consecutive.
+
+Input:
+The first input will be T, the number of test cases. T<= 1000. 2T lines follow two for each test case.
+The first line will be the number of elements in the array, N. 1<= N <= 50
+The second line will have N numbers separated by a space. The ith number is the ith element in the array. Each number will lie between -2000 and 2000 (inclusive).
+
+Output:
+For every test case, print the minimum number of elements to be changed to get a consecutive sequence of numbers on a new line.
+
+Sample Input:
+2
+
+3
+
+1 4 5
+
+7
+
+99 8 9 102 103 16 17
+
+Sample Output:
+1
+
+4
+
+EXPLANATION:
+In the second test case, we can change 8, 9, 16 and 17 to 100, 101, 104, and 105 respectively.

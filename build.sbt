@@ -64,4 +64,8 @@ lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 lazy val disableWarts = Set(Wart.Null,
   Wart.NonUnitStatements,
   Wart.Throw,
-  Wart.Any)
+  Wart.Any,
+  Wart.OptionPartial,
+  Wart.Var,
+  Wart.DefaultArguments,
+  Wart.StringPlusAny)
